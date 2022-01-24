@@ -1,0 +1,27 @@
+web:
+    web018:
+        cpu:
+            web_clawer_for_grafana:
+                url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-web018.rd5.prod&var-inter=1m&fullscreen&panelId=1
+                bun_id: 15 
+            model: 
+              - name: maintanece
+                data_path: no_maintanece
+                model_path: no_maintanece
+                threshold: 0.07857883
+              - name: no_maintanece
+                data_path: no_maintanece
+                model_path: no_maintanece
+                threshold: 0.07857883
+              - name: update_2_5
+                data_path: no_maintanece
+                model_path: no_maintanece
+                threshold: 0.07857883
+              - name: most
+                data_path: no_maintanece
+                model_path: no_maintanece
+                threshold: 0.07857883
+            
+        
+        
+
