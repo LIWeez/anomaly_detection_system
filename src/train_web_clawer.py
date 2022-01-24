@@ -8,6 +8,7 @@ import os
 import sys
 import math
 from datetime import datetime, timedelta
+import turtle
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
@@ -18,9 +19,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import WebDriverException
 
-# with open('api.yml', 'r') as f:
-#     apiArray = yaml.load(f)
-#     print(apiArray)
+with open('api.yml', 'r') as f:
+    apiArray = yaml.load(f)
+    print(apiArray)
 
 
 
@@ -58,18 +59,21 @@ def download_csv_file(url):
     #time.sleep(5) 
     # driver.get_screenshot_as_file("foo.png")
 
-def confirm_whether_there_is_maintenance(datetime, maintenance_list):
+def Classifier(datetime, classify_method):
+    if classify_method == 'check_maintanece':
+        week_number = datetime.week
+        if datetime.week >= 8:
+            week_number += 1
+        if datetime.week >= 44:
+            week_number += 1
+        if week_number /2 =1
+            data_path = xxx['data_path']
+            return True
 
-    for maintenance_day in maintenance_list:
-        if datetime.year == maintenance_day.year and datetime.month == maintenance_day.month and datetime.day == maintenance_day.day:
-            maintenance = True
-            break
-        # elif datetime.day == 2 or datetime.day == 5:
-        #     maintenance = True
-        #     break
-        else:
-            maintenance = False
-    return maintenance
+    elif classify_method == 'update_days':
+        function2()
+    else
+        
 
 
 if __name__ == '__main__':
@@ -91,16 +95,16 @@ if __name__ == '__main__':
     method = 'DELETE'
     API = '%2Fapi%2Fuser%2F*****'
 
-    maintenance_list = [datetime(2021, 11, 10) ,datetime(2021, 10, 27), datetime(2021, 10, 13),
-                        datetime(2021, 9, 29), datetime(2021, 9, 8), datetime(2021, 8, 25),
-                        datetime(2021, 8, 11), datetime(2021, 7, 28), datetime(2021, 7, 14),
-                        datetime(2021, 6, 30), datetime(2021, 6, 16), datetime(2021, 6, 2),
-                        datetime(2021, 5, 19), datetime(2021, 5, 5), datetime(2021, 4, 21),
-                        datetime(2021, 4, 7), datetime(2021, 3, 24), datetime(2021, 3, 10),
-                        datetime(2021, 2, 24), datetime(2021, 2, 3), datetime(2021, 1, 20),
-                        datetime(2021, 1, 6), datetime(2020, 12, 16), datetime(2020, 12, 2),
-                        datetime(2020, 11, 18), datetime(2020, 11, 4), datetime(2021, 11, 24),
-                        datetime(2021, 12, 8), datetime(2021, 12, 22), datetime(2021, 1, 5)]
+    # maintenance_list = [datetime(2021, 11, 10) ,datetime(2021, 10, 27), datetime(2021, 10, 13),
+    #                     datetime(2021, 9, 29), datetime(2021, 9, 8), datetime(2021, 8, 25),
+    #                     datetime(2021, 8, 11), datetime(2021, 7, 28), datetime(2021, 7, 14),
+    #                     datetime(2021, 6, 30), datetime(2021, 6, 16), datetime(2021, 6, 2),
+    #                     datetime(2021, 5, 19), datetime(2021, 5, 5), datetime(2021, 4, 21),
+    #                     datetime(2021, 4, 7), datetime(2021, 3, 24), datetime(2021, 3, 10),
+    #                     datetime(2021, 2, 24), datetime(2021, 2, 3), datetime(2021, 1, 20),
+    #                     datetime(2021, 1, 6), datetime(2020, 12, 16), datetime(2020, 12, 2),
+    #                     datetime(2020, 11, 18), datetime(2020, 11, 4), datetime(2021, 11, 24),
+    #                     datetime(2021, 12, 8), datetime(2021, 12, 22), datetime(2021, 1, 5)]
     # the_day_before_datetime = datetime.now().replace(hour=0, minute=0, second=0) + timedelta(hours=-8, seconds=-1)
     the_day_before_datetime = datetime.now().replace(hour=0, minute=0, second=0) + timedelta(seconds=-1)
 
@@ -114,7 +118,7 @@ if __name__ == '__main__':
 
         print('下載csv檔案')
         download_status = False
-        maintenance_day = confirm_whether_there_is_maintenance(the_day_before_datetime, maintenance_list)
+        file_path = Classifier(the_day_before_datetime, xxx['classfier_method'])
         while download_status == False:
             size = 0
             download_csv_file(url)
@@ -129,10 +133,7 @@ if __name__ == '__main__':
 
         os.rename("grafana_data_export.csv", file_name)
 
-        if maintenance_day == True:
-            shutil.move(file_name, "/usr/local/airflow/data/maintenance/")
-        else:
-            shutil.move(file_name, "/usr/local/airflow/data/no_maintenance/")
+        shutil.move(file_name, file_path)
 
         the_day_before_datetime = the_day_before_datetime + timedelta(days=-1)
 

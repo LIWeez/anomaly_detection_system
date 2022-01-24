@@ -9,14 +9,12 @@ web:
                 data_path: no_maintanece
                 model_path: no_maintanece
                 threshold: 0.07857883
-              - name: no_maintanece
-                data_path: no_maintanece
-                model_path: no_maintanece
-                threshold: 0.07857883
+                classify_method: maintanece
               - name: update_2_5
                 data_path: no_maintanece
                 model_path: no_maintanece
                 threshold: 0.07857883
+                classify_method: update_days
               - name: most
                 data_path: no_maintanece
                 model_path: no_maintanece
