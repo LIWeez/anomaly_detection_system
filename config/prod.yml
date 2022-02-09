@@ -1,24 +1,87 @@
 web:
-    web018:
+    ipl-web018.rd5.prod:
         cpu:
-            web_clawer_for_grafana:
+            grafana:
                 url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-web018.rd5.prod&var-inter=1m&fullscreen&panelId=1
-                bun_id: 15 
+                div_id: 2 
             model: 
               - name: maintanece
-                data_path: no_maintanece
-                model_path: no_maintanece
+                data_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/cpu/maintanece
+                model_path: /usr/workspace/model/prod/web/ipl-web018.rd5.prod/cpu/maintanece
                 threshold: 0.07857883
-                classify_method: maintanece
-              - name: update_2_5
-                data_path: no_maintanece
-                model_path: no_maintanece
+                classify_method: check_maintanece
+              - name: update_days
+                data_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/cpu/update_days
+                model_path: /usr/workspace/model/prod/web/ipl-web018.rd5.prod/cpu/update_days
                 threshold: 0.07857883
                 classify_method: update_days
-              - name: most
-                data_path: no_maintanece
-                model_path: no_maintanece
+              - name: normal
+                data_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/cpu/normal
+                model_path: /usr/workspace/model/prod/web/ipl-web018.rd5.prod/cpu/normal
                 threshold: 0.07857883
+                classify_method: normal
+    #     memory:
+    #         grafana:
+    #             url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-web018.rd5.prod&var-inter=1m&fullscreen&panelId=3
+    #             div_id: 3 
+    #         model: 
+    #           - name: maintanece
+    #             data_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/memory/maintanece
+    #             model_path: no_maintanece
+    #             threshold: 0.07857883
+    #             classify_method: check_maintanece
+    #           - name: update_days
+    #             data_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/memory/update_days
+    #             model_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/memory/update_days
+    #             threshold: 0.07857883
+    #             classify_method: update_days
+    #           - name: normal
+    #             data_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/memory/normal
+    #             model_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/memory/normal
+    #             threshold: 0.07857883
+    #             classify_method: normal
+                
+    # ipl-jenkins.rd5.prod:
+    #     cpu:
+    #         grafana:
+    #             url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-jenkins.rd5.prod&var-inter=1m&fullscreen&panelId=1
+    #             div_id: 2 
+    #         model: 
+    #           - name: maintanece
+    #             data_path: /usr/workspace/data/prod/web/ipl-jenkins.rd5.prod/cpu/maintanece
+    #             model_path: no_maintanece
+    #             threshold: 0.07857883
+    #             classify_method: check_maintanece
+    #           - name: update_days
+    #             data_path: /usr/workspace/data/prod/web/ipl-jenkins.rd5.prod/cpu/update_days
+    #             model_path: no_maintanece
+    #             threshold: 0.07857883
+    #             classify_method: update_days
+    #           - name: normal
+    #             data_path: /usr/workspace/data/prod/web/ipl-jenkins.rd5.prod/cpu/normal
+    #             model_path: no_maintanece
+    #             threshold: 0.07857883
+    #             classify_method: normal
+    #     memory:
+    #         grafana:
+    #             url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&fullscreen&panelId=3&var-db=rd5&var-server=ipl-jenkins.rd5.prod&var-inter=1m
+    #             div_id: 3 
+    #         model: 
+    #           - name: maintanece
+    #             data_path: /usr/workspace/data/prod/web/ipl-jenkins.rd5.prod/memory/maintanece
+    #             model_path: no_maintanece
+    #             threshold: 0.07857883
+    #             classify_method: check_maintanece
+    #           - name: update_days
+    #             data_path: /usr/workspace/data/prod/web/ipl-jenkins.rd5.prod/memory/update_days
+    #             model_path: no_maintanece
+    #             threshold: 0.07857883
+    #             classify_method: update_days
+    #           - name: normal
+    #             data_path: /usr/workspace/data/prod/web/ipl-jenkins.rd5.prod/memory/normal
+    #             model_path: no_maintanece
+    #             threshold: 0.07857883
+    #             classify_method: normal
             
         
         
