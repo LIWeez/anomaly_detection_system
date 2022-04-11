@@ -1,0 +1,460 @@
+web:
+  # ipl-web01.rd5.dev:
+  #     cpu:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=1
+  #             div_id: 2 
+  #             percent_format: True
+  #         model: 
+  #           - name: maintanece
+  #             data_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/cpu/maintanece
+  #             model_path: /usr/workspace/model/prod/web/ipl-web018.rd5.prod/cpu/maintanece
+  #             threshold: 7
+  #             classify_method: check_maintanece
+  #           - name: update_days
+  #             data_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/cpu/update_days
+  #             model_path: /usr/workspace/model/prod/web/ipl-web018.rd5.prod/cpu/update_days
+  #             threshold: 5
+  #             classify_method: update_days
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/cpu/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/cpu/normal
+  #             algorithm: moving_maximum_of_the_historical_data
+  #             threshold: 10
+  #             classify_method: normal
+  #     memory:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=3
+  #             div_id: 3 
+  #             percent_format: True
+  #         model: 
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/memory/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/memory/normal
+  #             algorithm: average_of_the_historical_data
+  #             threshold: 10
+  #             classify_method: normal
+  #     disk_usage_in_percent_var_log:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=96
+  #             div_id: 4 
+  #             percent_format: True
+  #         model: 
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/disk_usage_in_percent_var_log/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/disk_usage_in_percent_var_log/normal
+  #             algorithm: average_of_the_historical_data
+  #             threshold: 10
+  #             classify_method: normal
+  #     disk_usage_in_percent_home:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=97
+  #             div_id: 5 
+  #             percent_format: True
+  #         model: 
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/disk_usage_in_percent_home/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/disk_usage_in_percent_home/normal
+  #             algorithm: average_of_the_historical_data
+  #             threshold: 10
+  #             classify_method: normal
+  #     disk_usage_in_percent_root:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=98
+  #             div_id: 6 
+  #             percent_format: True
+  #         model: 
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/disk_usage_in_percent_root/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/disk_usage_in_percent_root/normal
+  #             algorithm: average_of_the_historical_data
+  #             threshold: 15
+  #             classify_method: normal
+  #     load_average:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=6
+  #             div_id: 7 
+  #             percent_format: True
+  #         model: 
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/load_average/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/load_average/normal
+  #             algorithm: moving_maximum_and_minimum_of_the_historical_data
+  #             threshold: 15
+  #             classify_method: normal
+  #     swap:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=87
+  #             div_id: 8 
+  #             percent_format: True
+  #         model: 
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/swap/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/swap/normal
+  #             algorithm: average_of_the_historical_data
+  #             threshold: 10
+  #             classify_method: normal
+  #     disk_io_time_read:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=88
+  #             div_id: 10 
+  #             percent_format: True
+  #         model: 
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/disk_io_time_read/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/disk_io_time_read/normal
+  #             algorithm: average_of_the_historical_data
+  #             threshold: 5
+  #             classify_method: normal
+  #     disk_io_time_write:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=89
+  #             div_id: 11 
+  #             percent_format: True
+  #         model: 
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/disk_io_time_write/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/disk_io_time_write/normal
+  #             algorithm: average_of_the_historical_data
+  #             threshold: 5
+  #             classify_method: normal
+  #     disk_io_requests_read:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=90
+  #             div_id: 12
+  #             percent_format: True
+  #         model: 
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/disk_io_requests_read/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/disk_io_requests_read/normal
+  #             algorithm: average_of_the_historical_data
+  #             threshold: 5
+  #             classify_method: normal
+  #     disk_io_requests_write:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=91
+  #             div_id: 13
+  #             percent_format: True
+  #         model: 
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/disk_io_requests_read/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/disk_io_requests_read/normal
+  #             algorithm: average_of_the_historical_data
+  #             threshold: 5
+  #             classify_method: normal
+  #     disk_io_latency:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=123
+  #             div_id: 14
+  #             percent_format: True
+  #         model: 
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/disk_io_latency/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/disk_io_latency/normal
+  #             algorithm: average_of_the_historical_data
+  #             threshold: 5
+  #             classify_method: normal
+  #     requests:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=19
+  #             div_id: 16
+  #             percent_format: False
+  #         model: 
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/requests/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/requests/normal
+  #             algorithm: moving_maximum_and_minimum_of_the_historical_data
+  #             threshold: 5
+  #             classify_method: normal
+  #     PHP5-FPM_accepted_connections:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=21
+  #             div_id: 22
+  #             percent_format: False
+  #         model: 
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/PHP5-FPM_accepted_connections/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/PHP5-FPM_accepted_connections/normal
+  #             algorithm: moving_maximum_and_minimum_of_the_historical_data
+  #             threshold: 5
+  #             classify_method: normal
+  #     network_usage_eth0_in:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=83
+  #             div_id: 29
+  #             percent_format: False
+  #         model: 
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/network_usage_eth0_in/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/network_usage_eth0_in/normal
+  #             algorithm: moving_maximum_of_the_historical_data
+  #             threshold: 8
+  #             classify_method: normal
+  #     network_usage_eth0_out:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=84
+  #             div_id: 30
+  #             percent_format: False
+  #         model: 
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/network_usage_eth0_out/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/network_usage_eth0_out/normal
+  #             algorithm: moving_maximum_of_the_historical_data
+  #             threshold: 8
+  #             classify_method: normal
+  #     netstat_connections_established:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=127
+  #             div_id: 32
+  #             percent_format: False
+  #         model: 
+  #           - name: normal
+  #             data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/netstat_connections_established/normal
+  #             model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/netstat_connections_established/normal
+  #             algorithm: average_of_the_historical_data
+  #             threshold: 6
+  #             classify_method: normal
+  #     netstat_connections_time_wait:
+  #         grafana:
+  #             url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web01.rd5.dev&var-inter=1m&viewPanel=126
+  #             div_id: 35
+  #             percent_format: False
+          # model: 
+          #   - name: normal
+          #     data_path: /usr/workspace/data/dev/web/ipl-web01.rd5.dev/netstat_connections_time_wait/normal
+          #     model_path: /usr/workspace/model/dev/web/ipl-web01.rd5.dev/netstat_connections_time_wait/normal
+          #     algorithm: moving_maximum_and_minimum_of_the_historical_data
+          #     threshold: 5
+          #     classify_method: normal
+
+  ipl-web02.rd5.dev:
+      cpu:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=1
+              div_id: 2 
+              percent_format: True
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/cpu/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/cpu/normal
+              algorithm: moving_maximum_of_the_historical_data
+              threshold: 10
+              classify_method: normal
+      memory:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=3
+              div_id: 3 
+              percent_format: True
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/memory/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/memory/normal
+              algorithm: average_of_the_historical_data
+              threshold: 10
+              classify_method: normal
+      disk_usage_in_percent_var_log:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=96
+              div_id: 4 
+              percent_format: True
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/disk_usage_in_percent_var_log/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/disk_usage_in_percent_var_log/normal
+              algorithm: average_of_the_historical_data
+              threshold: 10
+              classify_method: normal
+      disk_usage_in_percent_home:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=97
+              div_id: 5 
+              percent_format: True
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/disk_usage_in_percent_home/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/disk_usage_in_percent_home/normal
+              algorithm: average_of_the_historical_data
+              threshold: 10
+              classify_method: normal
+      disk_usage_in_percent_root:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=98
+              div_id: 6 
+              percent_format: True
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/disk_usage_in_percent_root/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/disk_usage_in_percent_root/normal
+              algorithm: average_of_the_historical_data
+              threshold: 15
+              classify_method: normal
+      load_average:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=6
+              div_id: 7 
+              percent_format: True
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/load_average/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/load_average/normal
+              algorithm: moving_maximum_and_minimum_of_the_historical_data
+              threshold: 15
+              classify_method: normal
+      swap:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=87
+              div_id: 8 
+              percent_format: True
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/swap/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/swap/normal
+              algorithm: average_of_the_historical_data
+              threshold: 10
+              classify_method: normal
+      disk_io_time_read:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=88
+              div_id: 10 
+              percent_format: True
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/disk_io_time_read/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/disk_io_time_read/normal
+              algorithm: average_of_the_historical_data
+              threshold: 5
+              classify_method: normal
+      disk_io_time_write:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=89
+              div_id: 11 
+              percent_format: True
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/disk_io_time_write/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/disk_io_time_write/normal
+              algorithm: average_of_the_historical_data
+              threshold: 5
+              classify_method: normal
+      disk_io_requests_read:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=90
+              div_id: 12
+              percent_format: True
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/disk_io_requests_read/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/disk_io_requests_read/normal
+              algorithm: average_of_the_historical_data
+              threshold: 5
+              classify_method: normal
+      disk_io_requests_write:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=91
+              div_id: 13
+              percent_format: True
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/disk_io_requests_read/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/disk_io_requests_read/normal
+              algorithm: average_of_the_historical_data
+              threshold: 5
+              classify_method: normal
+      disk_io_latency:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=123
+              div_id: 14
+              percent_format: True
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/disk_io_latency/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/disk_io_latency/normal
+              algorithm: average_of_the_historical_data
+              threshold: 5
+              classify_method: normal
+      requests:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=19
+              div_id: 16
+              percent_format: False
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/requests/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/requests/normal
+              algorithm: moving_maximum_and_minimum_of_the_historical_data
+              threshold: 5
+              classify_method: normal
+      PHP5-FPM_accepted_connections:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=21
+              div_id: 22
+              percent_format: False
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/PHP5-FPM_accepted_connections/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/PHP5-FPM_accepted_connections/normal
+              algorithm: moving_maximum_and_minimum_of_the_historical_data
+              threshold: 5
+              classify_method: normal
+      network_usage_eth0_in:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=83
+              div_id: 29
+              percent_format: False
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/network_usage_eth0_in/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/network_usage_eth0_in/normal
+              algorithm: moving_maximum_of_the_historical_data
+              threshold: 8
+              classify_method: normal
+      network_usage_eth0_out:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=84
+              div_id: 30
+              percent_format: False
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/network_usage_eth0_out/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/network_usage_eth0_out/normal
+              algorithm: moving_maximum_of_the_historical_data
+              threshold: 8
+              classify_method: normal
+      netstat_connections_established:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=127
+              div_id: 32
+              percent_format: False
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/netstat_connections_established/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/netstat_connections_established/normal
+              algorithm: average_of_the_historical_data
+              threshold: 6
+              classify_method: normal
+      netstat_connections_time_wait:
+          grafana:
+              url: http://grafana.dev3/d/000000003/web?orgId=1&var-db=rd5&var-server=ipl-web02.rd5.dev&var-inter=1m&viewPanel=126
+              div_id: 35
+              percent_format: False
+          model: 
+            - name: normal
+              data_path: /usr/workspace/data/dev/web/ipl-web02.rd5.dev/netstat_connections_time_wait/normal
+              model_path: /usr/workspace/model/dev/web/ipl-web02.rd5.dev/netstat_connections_time_wait/normal
+              algorithm: moving_maximum_and_minimum_of_the_historical_data
+              threshold: 5
+              classify_method: normal
+
+
+
+
+
+
+
+
+
+
+
+
+
+                

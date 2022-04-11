@@ -1,29 +1,31 @@
 web:
-    ipl-web018.rd5.prod:
-        cpu:
-            grafana:
-                url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-web018.rd5.prod&var-inter=1m&fullscreen&panelId=1
-                div_id: 2 
-            model: 
-              - name: maintanece
-                data_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/cpu/maintanece
-                model_path: /usr/workspace/model/prod/web/ipl-web018.rd5.prod/cpu/maintanece
-                threshold: 0.07857883
-                classify_method: check_maintanece
-              - name: update_days
-                data_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/cpu/update_days
-                model_path: /usr/workspace/model/prod/web/ipl-web018.rd5.prod/cpu/update_days
-                threshold: 0.07857883
-                classify_method: update_days
-              - name: normal
-                data_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/cpu/normal
-                model_path: /usr/workspace/model/prod/web/ipl-web018.rd5.prod/cpu/normal
-                threshold: 0.07857883
-                classify_method: normal
+    # ipl-web018.rd5.prod:
+    #     cpu:
+    #         grafana:
+    #             url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-web018.rd5.prod&var-inter=1m&fullscreen&panelId=1
+    #             div_id: 2 
+    #             percent_format: True
+        #     model: 
+        #       - name: maintanece
+        #         data_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/cpu/maintanece
+        #         model_path: /usr/workspace/model/prod/web/ipl-web018.rd5.prod/cpu/maintanece
+        #         threshold: 7
+        #         classify_method: check_maintanece
+              # - name: update_days
+              #   data_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/cpu/update_days
+              #   model_path: /usr/workspace/model/prod/web/ipl-web018.rd5.prod/cpu/update_days
+              #   threshold: 5
+              #   classify_method: update_days
+              # - name: normal
+              #   data_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/cpu/normal
+              #   model_path: /usr/workspace/model/prod/web/ipl-web018.rd5.prod/cpu/normal
+              #   threshold: 5
+              #   classify_method: normal
     #     memory:
     #         grafana:
     #             url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-web018.rd5.prod&var-inter=1m&fullscreen&panelId=3
     #             div_id: 3 
+    #             percent_format: True
     #         model: 
     #           - name: maintanece
     #             data_path: /usr/workspace/data/prod/web/ipl-web018.rd5.prod/memory/maintanece
@@ -45,27 +47,30 @@ web:
     #     cpu:
     #         grafana:
     #             url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-jenkins.rd5.prod&var-inter=1m&fullscreen&panelId=1
-    #             div_id: 2 
+    #             div_id: 2
+    #             percent_format: True 
     #         model: 
     #           - name: maintanece
     #             data_path: /usr/workspace/data/prod/web/ipl-jenkins.rd5.prod/cpu/maintanece
-    #             model_path: no_maintanece
-    #             threshold: 0.07857883
+    #             model_path: /usr/workspace/model/prod/web/ipl-jenkins.rd5.prod/cpu/maintanece
+    #             threshold: 8
     #             classify_method: check_maintanece
     #           - name: update_days
     #             data_path: /usr/workspace/data/prod/web/ipl-jenkins.rd5.prod/cpu/update_days
-    #             model_path: no_maintanece
+    #             model_path: /usr/workspace/model/prod/web/ipl-jenkins.rd5.prod/cpu/update_days
     #             threshold: 0.07857883
     #             classify_method: update_days
     #           - name: normal
     #             data_path: /usr/workspace/data/prod/web/ipl-jenkins.rd5.prod/cpu/normal
-    #             model_path: no_maintanece
-    #             threshold: 0.07857883
+    #             model_path: /usr/workspace/model/prod/web/ipl-jenkins.rd5.prod/cpu/normal
+    #             threshold: 8
     #             classify_method: normal
+
     #     memory:
     #         grafana:
     #             url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&fullscreen&panelId=3&var-db=rd5&var-server=ipl-jenkins.rd5.prod&var-inter=1m
     #             div_id: 3 
+    #             percent_format: True
     #         model: 
     #           - name: maintanece
     #             data_path: /usr/workspace/data/prod/web/ipl-jenkins.rd5.prod/memory/maintanece
@@ -82,6 +87,310 @@ web:
     #             model_path: no_maintanece
     #             threshold: 0.07857883
     #             classify_method: normal
+
+    # ipl-session066.rd5.prod:
+    #     requests:
+    #         grafana:
+    #             url: http://grafana.rd5/d/000000078/ipl-session?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-session066.rd5.prod&var-inter=1m&fullscreen&panelId=19
+    #             div_id: 16
+    #             percent_format: False
+    #         model: 
+    #           - name: maintanece
+    #             data_path: /usr/workspace/data/prod/web/ipl-session066.rd5.prod/requests/maintanece
+    #             model_path: /usr/workspace/model/prod/web/ipl-session066.rd5.prod/requests/maintanece
+    #             algorithm: average_of_the_historical_data
+    #             threshold: 5
+    #             classify_method: check_maintanece
+            #   - name: normal
+            #     data_path: /usr/workspace/data/prod/web/ipl-session066.rd5.prod/requests/normal
+            #     model_path: /usr/workspace/model/prod/web/ipl-session066.rd5.prod/requests/normal
+            #     algorithm: average_of_the_historical_data
+            #     threshold: 5
+            #     classify_method: normal
+                
+            
+    # ipl-external38.rd5.prod:
+        # Netwok Usage(eth0:in):
+        #     grafana:
+        #         url: http://grafana.rd5/d/000000091/ipl-external?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-external38.rd5.prod&var-inter=1m&fullscreen&panelId=83
+        #         div_id: 42
+        #         percent_format: False
+        #     model: 
+        #       - name: normal
+        #         data_path: /usr/workspace/data/prod/web/ipl-external38.rd5.prod/netwok_usage_eth0_in/normal
+        #         model_path: /usr/workspace/model/prod/web/ipl-external38.rd5.prod/netwok_usage_eth0_in/normal
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 9
+        #         classify_method: normal
+        # Netwok Usage(eth0:out):
+        #     grafana:
+        #         url: http://grafana.rd5/d/000000091/ipl-external?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-external38.rd5.prod&var-inter=1m&fullscreen&panelId=84
+        #         div_id: 43
+        #         percent_format: False
+        #     model: 
+        #       - name: maintanece
+        #         data_path: /usr/workspace/data/prod/web/ipl-external38.rd5.prod/netwok_usage_eth0_out/maintanece
+        #         model_path: /usr/workspace/model/prod/web/ipl-external38.rd5.prod/netwok_usage_eth0_out/maintanece
+        #         algorithm: average_rate_of_change_of_the_historical_data
+        #         threshold: 4
+        #         classify_method: check_maintanece
+        #       - name: normal
+        #         data_path: /usr/workspace/data/prod/web/ipl-external38.rd5.prod/netwok_usage_eth0_out/normal
+        #         model_path: /usr/workspace/model/prod/web/ipl-external38.rd5.prod/netwok_usage_eth0_out/normal
+        #         algorithm: average_rate_of_change_of_the_historical_data
+        #         threshold: 4
+        #         classify_method: normal
+
+
+
+    # ipl-bridge15.rd5.prod:
+    #     load_average_per_minute:
+    #         grafana:
+    #             url: http://grafana.rd5/d/000000090/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-bridge15.rd5.prod&var-inter=1m&fullscreen&panelId=6
+    #             div_id: 7
+    #             percent_format: False 
+    #         model: 
+    #           - name: maintanece
+    #             data_path: /usr/workspace/data/prod/web/ipl-bridge15.rd5.prod/load_average_per_minute/maintanece
+    #             model_path: /usr/workspace/model/prod/web/ipl-bridge15.rd5.prod/load_average_per_minute/maintanece
+    #             algorithm: average_of_the_historical_data
+    #             threshold: 4
+    #             classify_method: check_maintanece
+    #           - name: normal
+    #             data_path: /usr/workspace/data/prod/web/ipl-bridge15.rd5.prod/load_average_per_minute/normal
+    #             model_path: /usr/workspace/model/prod/web/ipl-bridge15.rd5.prod/load_average_per_minute/normal
+    #             algorithm: average_of_the_historical_data
+    #             threshold: 4
+    #             classify_method: normal
+
+
+    # ipl-payment41.rd5.prod:
+    #     cpu:
+    #         grafana:
+    #             url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&fullscreen&panelId=1&var-db=rd5&var-server=ipl-payment41.rd5.prod&var-inter=1m
+    #             div_id: 2
+    #             percent_format: True 
+    #         model: 
+    #           - name: normal
+    #             data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/cpu/normal
+    #             model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/cpu/normal
+    #             algorithm: average_of_the_historical_data
+    #             threshold: 9
+    #             classify_method: normal
+        # memory:
+        #     grafana:
+        #         url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&fullscreen&panelId=3&var-db=rd5&var-server=ipl-payment41.rd5.prod&var-inter=1m
+        #         div_id: 3 
+        #         percent_format: True
+        #     model: 
+        #       - name: normal
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/memory/normal
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/memory/normal
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 0.07857883
+        #         classify_method: normal
+        # disk_usage_in_percent_root:
+        #     grafana:
+        #         url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-payment41.rd5.prod&var-inter=1m&fullscreen&panelId=98
+        #         div_id: 6 
+        #         percent_format: True
+        #     model: 
+        #       - name: normal
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/disk_usage_in_percent_root/normal
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/disk_usage_in_percent_root/normal
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 0.07857883
+        #         classify_method: normal
+        # load_average_minute:
+        #     grafana:
+        #         url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-payment41.rd5.prod&var-inter=1m&fullscreen&panelId=6
+        #         div_id: 7 
+        #         percent_format: False
+        #     model: 
+        #       # - name: maintanece
+        #       #   data_path: /usr/workspace/data/prod/web/ipl-external38.rd5.prod/load_average_minute/maintanece
+        #       #   model_path: /usr/workspace/model/prod/web/ipl-external38.rd5.prod/load_average_minute/maintanece
+        #       #   algorithm: average_rate_of_change_of_the_historical_data
+        #       #   threshold: 4
+        #       #   classify_method: check_maintanece
+        #       - name: normal
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/load_average_minute/normal
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/load_average_minute/normal
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 0.07857883
+        #         classify_method: normal
+        # swap:
+        #     grafana:
+        #         url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-payment41.rd5.prod&var-inter=1m&fullscreen&panelId=87
+        #         div_id: 8 
+        #         percent_format: True
+        #     model: 
+        #       - name: normal
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/swap/normal
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/swap/normal
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 0.07857883
+        #         classify_method: normal
+        # disk_IO_time_read:
+        #     grafana:
+        #         url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-payment41.rd5.prod&var-inter=1m&fullscreen&panelId=88
+        #         div_id: 10 
+        #         percent_format: True
+        #     model: 
+        #       - name: normal
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/disk_IO_time_read/normal
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/disk_IO_time_read/normal
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 0.07857883
+        #         classify_method: normal
+        # disk_IO_time_write:
+        #     grafana:
+        #         url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-payment41.rd5.prod&var-inter=1m&fullscreen&panelId=89
+        #         div_id: 11 
+        #         percent_format: True
+        #     model: 
+        #       - name: maintanece
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/disk_IO_time_write/maintanece
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/disk_IO_time_write/maintanece
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 4
+        #         classify_method: check_maintanece
+        #       - name: normal
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/disk_IO_time_write/normal
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/disk_IO_time_write/normal
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 0.07857883
+        #         classify_method: normal
+        # disk_IO_requests_write:
+        #     grafana:
+        #         url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-payment41.rd5.prod&var-inter=1m&fullscreen&panelId=91
+        #         div_id: 13 
+        #         percent_format: True
+        #     model: 
+        #       - name: maintanece
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/disk_IO_requests_write/maintanece
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/disk_IO_requests_write/maintanece
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 4
+        #         classify_method: check_maintanece
+        #       - name: normal
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/disk_IO_requests_write/normal
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/disk_IO_requests_write/normal
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 2
+        #         classify_method: normal
+        # requests:
+        #     grafana:
+        #         url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-payment41.rd5.prod&var-inter=1m&fullscreen&panelId=19
+        #         div_id: 16 
+        #         percent_format: True
+        #     model: 
+        #       - name: maintanece
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/requests/maintanece
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/requests/maintanece
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 4
+        #         classify_method: check_maintanece
+        #       - name: normal
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/requests/normal
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/requests/normal
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 2
+        #         classify_method: normal
+        # php_fpm_accepted_connections:
+        #     grafana:
+        #         url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-payment41.rd5.prod&var-inter=1m&fullscreen&panelId=21
+        #         div_id: 22 
+        #         percent_format: True
+        #     model: 
+        #       - name: maintanece
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/php_fpm_accepted_connections/maintanece
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/php_fpm_accepted_connections/maintanece
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 4
+        #         classify_method: check_maintanece
+        #       - name: normal
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/php_fpm_accepted_connections/normal
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/php_fpm_accepted_connections/normal
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 2
+        #         classify_method: normal
+        # netwok_usage_eth0_in:
+        #     grafana:
+        #         url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-payment41.rd5.prod&var-inter=1m&fullscreen&panelId=83
+        #         div_id: 27 
+        #         percent_format: True
+        #     model: 
+        #       - name: maintanece
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/netwok_usage_eth0_in/maintanece
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/netwok_usage_eth0_in/maintanece
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 4
+        #         classify_method: check_maintanece
+        #       - name: normal
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/netwok_usage_eth0_in/normal
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/netwok_usage_eth0_in/normal
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 2
+        #         classify_method: normal
+        # netwok_usage_eth0_out:
+        #     grafana:
+        #         url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-payment41.rd5.prod&var-inter=1m&fullscreen&panelId=84
+        #         div_id: 28 
+        #         percent_format: True
+        #     model: 
+        #       - name: maintanece
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/netwok_usage_eth0_out/maintanece
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/netwok_usage_eth0_out/maintanece
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 4
+        #         classify_method: check_maintanece
+        #       - name: normal
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/netwok_usage_eth0_out/normal
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/netwok_usage_eth0_out/normal
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 2
+        #         classify_method: normal
+
+
+
+        # xisk_IO_time_read:
+        #     grafana:
+        #         url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&var-db=rd5&var-server=ipl-payment41.rd5.prod&var-inter=1m&fullscreen&panelId=88
+        #         div_id: 10 
+        #         percent_format: True
+        #     model: 
+        #       - name: normal
+        #         data_path: /usr/workspace/data/prod/web/ipl-payment41.rd5.prod/disk_IO_time_read/normal
+        #         model_path: /usr/workspace/model/prod/web/ipl-payment41.rd5.prod/disk_IO_time_read/normal
+        #         algorithm: average_of_the_historical_data
+        #         threshold: 0.07857883
+        #         classify_method: normal
+
+
+    ipl-payment42.rd5.prod:
+        cpu:
+            grafana:
+                url: http://grafana.rd5/d/000000049/web?orgId=1&refresh=1m&fullscreen&panelId=1&var-db=rd5&var-server=ipl-payment42.rd5.prod&var-inter=1m
+                div_id: 2
+                percent_format: True 
+            model: 
+              - name: normal
+                data_path: /usr/workspace/data/prod/web/ipl-payment42.rd5.prod/cpu/normal
+                model_path: /usr/workspace/model/prod/web/ipl-payment42.rd5.prod/cpu/normal
+                algorithm: moving_maximum_and_minimum_of_the_historical_data
+                threshold: 4
+                classify_method: normal
+
+
+
+
+                
+      
+
+
+        
+
             
         
         

@@ -1,0 +1,10 @@
+FROM joyzoursky/python-chromedriver:3.9-selenium
+
+LABEL maintainer="elmer_lee"
+
+RUN pip install pyyaml && \
+    pip install matplotlib && \
+    pip install seaborn && \
+    pip install python-telegram-bot
+
+    

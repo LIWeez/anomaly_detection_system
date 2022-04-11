@@ -1,0 +1,25 @@
+version: '2'
+services:
+    
+  #base images
+  anomaly_app:
+    image: python-chromedriver:3.9-selenium-anomaly # builed image name
+    build:
+      context: .
+      dockerfile: dockerfile
+    network_mode: "host"
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    working_dir: "/usr/workspace"
+    container_name: "anomaly"
+    volumes: 
+     - /root/anomaly_detection_system/anomaly_detection_system/:/usr/workspace
+     - /dev/shm:/dev/shm
+    extra_hosts:
+     - grafana.rd5:10.249.52.1
+     - grafana.dev3:10.32.65.7
+     - grafana.qa3:10.32.75.7
+   # environment:
+   #   TZ: "Asia/Taipei"
+
+    
